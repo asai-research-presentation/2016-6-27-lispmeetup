@@ -41,7 +41,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
      inkscape:cx="403.91293"
-     inkscape:cy="308.3644"
+     inkscape:cy="309.79297"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -62,7 +62,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -264,28 +264,5 @@
          id="tspan4470-9-0"
          x="462.44986"
          y="161.81996">cost=10</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:22px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-indent:0;text-align:center;text-decoration:none;line-height:125%;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;block-progression:tb;writing-mode:lr-tb;text-anchor:middle;baseline-shift:baseline;color:#000000;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate;font-family:Nimbus Sans L;-inkscape-font-specification:Nimbus Sans L"
-       x="133.67337"
-       y="125.70254"
-       id="text3023"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan3025"
-         x="133.67337"
-         y="125.70254">最適コスト経路を</tspan><tspan
-         sodipodi:role="line"
-         x="133.67337"
-         y="153.20255"
-         id="tspan3033">ダイクストラ法で探索</tspan><tspan
-         sodipodi:role="line"
-         x="133.67337"
-         y="180.70255"
-         id="tspan3029">(辺の重みは目分量)</tspan><tspan
-         sodipodi:role="line"
-         x="133.67337"
-         y="211.23009"
-         id="tspan3031" /></text>
   </g>
 </svg>
