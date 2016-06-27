@@ -29,7 +29,9 @@ Made by guicho2.71828 (Masataro Asai)
 
 * MIT Lispers
 
-
+(自分の顔が汚い)
+  
+[[jpg:static/mit]]
 
 * フライトが長い
 
@@ -117,6 +119,26 @@ Made by guicho2.71828 (Masataro Asai)
 #+END_LARGER
 #+END_ALIGNRIGHT
 
+** 拡張のしやすさのために CLOS
+
+ #+BEGIN_SRC lisp
+ (in-package :hypercast)
+
+ (defgeneric cast (object type))  
+
+ (defmethod cast ((x sequence) (type (eql 'vector)))
+   (coerce x type)) ;; 上位互換
+
+ (defmethod cast ((code fixnum) (type (eql 'character)))
+   (code-char code)) ;; デフォルトでcode-char
+ #+END_SRC
+
+#+BEGIN_ALIGNRIGHT
+#+BEGIN_XLARGE
+→ CLOSは遅い!
+#+END_XLARGE
+#+END_ALIGNRIGHT
+ 
 * 拡張言語にCLOSを使いたいが遅い → Inlined CLOS
 
 @github
@@ -126,7 +148,7 @@ Made by guicho2.71828 (Masataro Asai)
 #+BEGIN_SRC common-lisp
 (defgeneric plus (a b))
 
-; →
+↓
 
 (ql:quickload :inlined-generic-function)
 (use-package :inlined-generic-function)
@@ -141,7 +163,7 @@ Made by guicho2.71828 (Masataro Asai)
 
 #+BEGIN_SRC lisp
 (defmethod plus :around ((a number) (b number))
-  (print :hi!) ;; not a meaningful operation...
+  (print :hi!)
   (call-next-method))
 
 (defmethod plus ((a fixnum) (b fixnum))
@@ -167,14 +189,16 @@ Made by guicho2.71828 (Masataro Asai)
 
 #+BEGIN_CONTAINER-FLUID
 #+BEGIN_ROW-FLUID
-#+BEGIN_SPAN6
+#+BEGIN_SPAN5
+#+BEGIN_SMALLER
 #+BEGIN_SRC lisp
 (defun func-using-plus (a b)
   (declare (inline plus))
   (plus a b))
 #+END_SRC
-#+END_SPAN6
-#+BEGIN_SPAN6
+#+END_SMALLER
+#+END_SPAN5
+#+BEGIN_SPAN7
 #+BEGIN_SRC lisp
 (LET ((#:A1734 (1+ A)) (#:B1735 (1- B)))
   (EMATCH* (#:A1734 #:B1735)
@@ -192,11 +216,11 @@ Made by guicho2.71828 (Masataro Asai)
        (DECLARE (TYPE FIXNUM A))
        ...))))
 #+END_SRC
-#+END_SPAN6
+#+END_SPAN7
 #+END_ROW-FLUID
 #+END_CONTAINER-FLUID
 
-** Inlined CLOS はどうやって作られているか?
+** Inlined CLOS のコンパイル
 
 → コンパイラマクロ
 
@@ -208,6 +232,7 @@ Made by guicho2.71828 (Masataro Asai)
 #+BEGIN_CONTAINER-FLUID
 #+BEGIN_ROW-FLUID
 #+BEGIN_SPAN6
+#+BEGIN_SMALLER
 #+BEGIN_SRC lisp
 (LET ((#:A1734 (1+ A)) (#:B1735 (1- B)))
   (EMATCH* (#:A1734 #:B1735)
@@ -225,6 +250,7 @@ Made by guicho2.71828 (Masataro Asai)
        (DECLARE (TYPE FIXNUM A))
        ...))))
 #+END_SRC
+#+END_SMALLER
 #+END_SPAN6
 #+BEGIN_SPAN6
 [[png:static/trivia]]
@@ -232,9 +258,9 @@ Made by guicho2.71828 (Masataro Asai)
 #+END_ROW-FLUID
 #+END_CONTAINER-FLUID
 
-* 型をつけることでコンパイル時型決定と同等に
+* 型をつけることでコンパイル時ディスパッチと同等に
 
-#+BEGIN_SRC cl
+#+BEGIN_SRC lisp
 (defun func-using-inlined-plus-and-type-added (a b)
   " ; disassembly for FUNC-USING-INLINED-PLUS-AND-TYPE-ADDED
 ; Size: 29 bytes. Origin: #x10031E7788
@@ -256,22 +282,112 @@ Made by guicho2.71828 (Masataro Asai)
   (plus a b))
 #+END_SRC
 
-** Inlined CLOS はどうやって作られているか?
+** 型をつけることでコンパイル時ディスパッチと同等に
 
 → コンパイラマクロ
 
 → パターンマッチ構文に展開
 
-→ プリミティブなif文列に展開
+→ *プリミティブなif文列に展開*
 
-→ 型推論に基づいて到達不能なコードを枝刈り
+→ *型推論に基づいて到達不能なコードを枝刈り* (処理系が勝手にやってくれる)
 
 #+BEGIN_SRC lisp
+(declare (type fixnum a b))
 (LET ((#:A1734 (1+ A)) (#:B1735 (1- B)))
   ....
-  (if (typep string)
-      ... ; XXX 枝刈り!!
-  (if (typep fixnum)
+  ;; XXX 枝刈り!!
+  ;;
+  ;;   (if (typep 'string)
+  ;;       ...
+  ;;
+  (if (typep 'fixnum)
       ...
 #+END_SRC
 
+** 
+
+#+BEGIN_SRC lisp
+(declare (inline plus))
+(declare (optimize (speed 3) (safety 0)))
+(declare (type fixnum a b))
+(plus a b)
+; disassembly for FUNC-USING-INLINED-PLUS-AND-TYPE-ADDED
+; Size: 29 bytes. Origin: #x10031E7788
+; 88:       4801F9           ADD RCX, RDI   ; ← 足し算のみ、JMPなし!
+; 8B:       488BD1           MOV RDX, RCX   ; 
+; 8E:       48D1E2           SHL RDX, 1
+; 91:       710C             JNO L0         ; ← 結果はBIGNUMかもしれない
+; 93:       488BD1           MOV RDX, RCX
+; 96:       41BB70060020     MOV R11D, 536872560              ; ALLOC-SIGNED-BIGNUM-IN-RDX
+; 9C:       41FFD3           CALL R11
+; 9F: L0:   488BE5           MOV RSP, RBP
+; A2:       F8               CLC
+; A3:       5D               POP RBP
+; A4:       C3               RET
+#+END_SRC
+
+* Hypercast
+
++ [X] coerce の上位互換
++ [X] CLOSで高い拡張性
++ [X] コンパイル時型決定できればネイティブコード化
++ [ ] *自動型変換*
+
+** 自動型変換
+
++ 型が *N* 個あれば *N^2* 個の変換関数を書く必要がある
+  #+BEGIN_LARGER
+  */→ 無理!!!/*
+  #+END_LARGER
+
++ 直接サポートされていない型変換は手で書くことに
+  #+BEGIN_LARGER
+  */→ 醜悪!!!/*
+  #+END_LARGER
+
+#+BEGIN_LARGER
+#+BEGIN_SRC lisp
+(cast (cast #\char 'fixnum) 'bitvector)
+#+END_SRC
+#+END_LARGER
+
+** なんでも探索: 型空間で経路探索
+
+# 状態空間探索の研究者としては朝飯前!
+[[png:auto1]]
+
+** なんでも探索: 型空間で経路探索
+
+一応目安で辺に重みをつけている 最適コストの経路
+   
+# 状態空間探索の研究者としては朝飯前!
+[[png:auto3]]
+
+** なんでも探索: 型空間で経路探索
+
+ダイクストラ法で探索
+   
+# 状態空間探索の研究者としては朝飯前!
+[[png:auto2]]
+
+** なんでも探索: 型空間で経路探索
+
+#+BEGIN_LARGER
+#+BEGIN_SRC lisp
+(cast #\c 'bit-vector)
+; -> (cast (cast #\c 'fixnum) 'bit-vector)
+; -> (cast 99 'bit-vector)
+; -> #*1100011000000000000000000000000000000000000000000000000000000000
+#+END_SRC
+#+END_LARGER
+
+* まとめ
+
+パターンマッチャをつかえば Inline CLOS が簡単に作れることを紹介した (してない)
+  
+アムステルダムの空港と飛行機の中でおもしろめのライブラリを作った
+
+今後の課題: 型変換の経路探索が実行時なのでコンパイル時に移す
+
+"なんでもZDD" の話はまた今度
