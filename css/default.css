@@ -21,6 +21,7 @@ body {
 pre, code {
   font-family: 'Ubuntu Mono',monospace;
   text-shadow: none;
+  font-size: inherit !important;
   background-color: white; }
 
 code {
