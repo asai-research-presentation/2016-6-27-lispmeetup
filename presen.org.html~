@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title></title>
+<!-- 2016-06-27 月 15:56 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Masataro Asai" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.loupe.min.js"></script>
+<script type="text/javascript" src="js/jgestures/jgestures.min.js"></script>
+<script type="text/javascript" src="js/code.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title"></h1>
+<div class="outline-text-1">
+<div class="xlarge">
+<div class="center">
+<p>
+今日の話: いろいろ
+</p>
+</div>
+
+</div>
+
+<div class="center">
+<p>
+東京大学 総合文化研究科 D2 浅井 政太郎
+</p>
+</div>
+
+<div class="note">
+<div class="alignright">
+<p>
+Made by guicho2.71828 (Masataro Asai)
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 近況報告 ICAPS 2016 @ London (Intl. Conf. Automated Planning &amp; Scheduling)</h2>
+<div class="outline-text-2" id="text-1">
+
+<div class="figure">
+<p><img src="img/static/bigben.jpg" alt="bigben.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> MIT Lispers</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+(自分の顔が汚い)
+</p>
+
+
+<div class="figure">
+<p><img src="img/static/mit.jpg" alt="mit.jpg" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> フライトが長い</h2>
+<div class="outline-text-2" id="text-3">
+
+<div class="figure">
+<p><img src="img/static/flight.png" alt="flight.png" />
+</p>
+</div>
+
+<div class="xlarge">
+<div class="alignright">
+<ul class="org-ul">
+<li>なにかつくろう!
+</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> </h2>
+<div class="outline-text-2" id="text-4">
+<div class="xlarge">
+<div class="center">
+<p>
+成果
+</p>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Hypercast &#x2013; なんでも変換機</h2>
+<div class="outline-text-2" id="text-5">
+<div class="larger">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(cast 5 'bit-vector)
+<span style="color: #b22222;">; </span><span style="color: #b22222;">-&gt; #*1010000000000000000000000000000000000000000000000000000000000000</span>
+</pre>
+</div>
+
+</div>
+
+<ol class="org-ol">
+<li><code>cl:coerce</code> 上位互換 → 拡張可能に
+</li>
+<li>Inlined CLOS で記述 → 定数引数であればコンパイル時にディスパッチ
+</li>
+<li>自動型変換 → 型変換の経路を自動探索
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-sec-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> COERCE: Common Lisp での型変換用の関数</h2>
+<div class="outline-text-2" id="text-6">
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6">
+<pre class="example">
+(coerce 5 'float) -&gt; 5.0
+</pre>
+
+<p>
+ある一定の型しかサポートしない
+</p>
+
+<p>
+(<b><i>list, vector, character, complex, float, function, t</i></b>)
+</p>
+
+<p>
+理由: 変換法に複数の解釈が可能だから
+</p>
+
+</div>
+<div class="span6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="center" />
+
+<col  class="center" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="center">float→integer</th>
+<th scope="col" class="center">character→integer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="center">floor(切り下げ)</td>
+<td class="center">char-int</td>
+</tr>
+
+<tr>
+<td class="center">ceiling(切り上げ)</td>
+<td class="center">char-code</td>
+</tr>
+
+<tr>
+<td class="center">round(丸め)</td>
+<td class="center">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="center">truncate(ゼロ寄せ)</td>
+<td class="center">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="alignright">
+<div class="larger">
+<p>
+デフォルトでどれかに対応してほしい
+</p>
+
+<p>
+拡張したい
+</p>
+
+</div>
+
+</div>
+</div>
+
+<div id="outline-container-sec-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> 拡張のしやすさのために CLOS</h3>
+<div class="outline-text-3" id="text-6-1">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">in-package</span> <span style="color: #483d8b;">:hypercast</span>)
+
+(<span style="color: #a020f0;">defgeneric</span> <span style="color: #0000ff;">cast</span> (object type))  
+
+(<span style="color: #a020f0;">defmethod</span> <span style="color: #0000ff;">cast</span> ((x sequence) (type (eql 'vector)))
+  (coerce x type)) <span style="color: #b22222;">;; </span><span style="color: #b22222;">&#19978;&#20301;&#20114;&#25563;</span>
+
+(<span style="color: #a020f0;">defmethod</span> <span style="color: #0000ff;">cast</span> ((code fixnum) (type (eql 'character)))
+  (code-char code)) <span style="color: #b22222;">;; </span><span style="color: #b22222;">&#12487;&#12501;&#12457;&#12523;&#12488;&#12391;code-char</span>
+</pre>
+</div>
+
+<div class="alignright">
+<div class="xlarge">
+<p>
+→ CLOSは遅い!
+</p>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 拡張言語にCLOSを使いたいが遅い → Inlined CLOS</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+@github
+</p>
+
+
+<div class="figure">
+<p><img src="img/static/inline.png" alt="inline.png" />
+</p>
+</div>
+
+<div class="org-src-container">
+
+<pre class="src src-common-lisp">(<span style="color: #a020f0;">defgeneric</span> <span style="color: #0000ff;">plus</span> (a b))
+
+&#8595;
+
+(ql:quickload <span style="color: #483d8b;">:inlined-generic-function</span>)
+(use-package <span style="color: #483d8b;">:inlined-generic-function</span>)
+
+(<span style="color: #a020f0;">defgeneric</span> <span style="color: #0000ff;">plus</span> (a b)
+  (<span style="color: #483d8b;">:generic-function-class</span> inlined-generic-function))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> メソッド記述</h3>
+<div class="outline-text-3" id="text-7-1">
+<p>
+普通のCLOSと変更なし
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">defmethod</span> <span style="color: #0000ff;">plus</span> <span style="color: #483d8b;">:around</span> ((a number) (b number))
+  (print <span style="color: #483d8b;">:hi!</span>)
+  (call-next-method))
+
+(<span style="color: #a020f0;">defmethod</span> <span style="color: #0000ff;">plus</span> ((a fixnum) (b fixnum))
+  (+ a b))
+(<span style="color: #a020f0;">defmethod</span> <span style="color: #0000ff;">plus</span> ((a float) (b float))
+  (+ a b))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Inlined CLOS のコンパイル</h3>
+<div class="outline-text-3" id="text-7-2">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">func-using-plus</span> (a b)
+  (<span style="color: #a020f0;">declare</span> (<span style="color: #a020f0;">inline</span> plus))
+  (plus a b))
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Inlined CLOS のコンパイル</h3>
+<div class="outline-text-3" id="text-7-3">
+<p>
+→ コンパイラマクロ
+</p>
+
+<p>
+→ パターンマッチ構文に展開
+</p>
+
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span5">
+<div class="smaller">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">func-using-plus</span> (a b)
+  (<span style="color: #a020f0;">declare</span> (<span style="color: #a020f0;">inline</span> plus))
+  (plus a b))
+</pre>
+</div>
+
+</div>
+
+</div>
+<div class="span7">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">LET</span> ((#<span style="color: #483d8b;">:A1734</span> (1+ A)) (#<span style="color: #483d8b;">:B1735</span> (1- B)))
+  (EMATCH* (#<span style="color: #483d8b;">:A1734</span> #<span style="color: #483d8b;">:B1735</span>)
+    (((TYPE FLOAT) (TYPE FLOAT))
+     (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT A))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT B))
+       (print <span style="color: #483d8b;">:hi!</span>) <span style="color: #b22222;">; </span><span style="color: #b22222;">&lt;--- around method</span>
+       (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+         (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT A))
+         (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT B))
+         (+ A B))))
+    (((TYPE FIXNUM) (TYPE FIXNUM))
+     (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FIXNUM A))
+       ...))))
+</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Inlined CLOS のコンパイル</h3>
+<div class="outline-text-3" id="text-7-4">
+<p>
+→ コンパイラマクロ
+</p>
+
+<p>
+→ パターンマッチ構文に展開
+</p>
+
+<p>
+→ プリミティブなif文列に展開 (長すぎるので画像)
+</p>
+
+
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span6">
+<div class="smaller">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">LET</span> ((#<span style="color: #483d8b;">:A1734</span> (1+ A)) (#<span style="color: #483d8b;">:B1735</span> (1- B)))
+  (EMATCH* (#<span style="color: #483d8b;">:A1734</span> #<span style="color: #483d8b;">:B1735</span>)
+    (((TYPE FLOAT) (TYPE FLOAT))
+     (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT A))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT B))
+       (print <span style="color: #483d8b;">:hi!</span>) <span style="color: #b22222;">; </span><span style="color: #b22222;">&lt;--- around method</span>
+       (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+         (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT A))
+         (<span style="color: #a020f0;">DECLARE</span> (TYPE FLOAT B))
+         (+ A B))))
+    (((TYPE FIXNUM) (TYPE FIXNUM))
+     (<span style="color: #a020f0;">LET</span> ((A #<span style="color: #483d8b;">:A1734</span>) (B #<span style="color: #483d8b;">:B1735</span>))
+       (<span style="color: #a020f0;">DECLARE</span> (TYPE FIXNUM A))
+       ...))))
+</pre>
+</div>
+
+</div>
+
+</div>
+<div class="span6">
+
+<div class="figure">
+<p><img src="img/static/trivia.png" alt="trivia.png" />
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> 型をつけることでコンパイル時ディスパッチと同等に</h2>
+<div class="outline-text-2" id="text-8">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">defun</span> <span style="color: #0000ff;">func-using-inlined-plus-and-type-added</span> (a b)
+  <span style="color: #8b2252;">" ; disassembly for FUNC-USING-INLINED-PLUS-AND-TYPE-ADDED</span>
+<span style="color: #8b2252;">; Size: 29 bytes. Origin: #x10031E7788</span>
+<span style="color: #8b2252;">; 88:       4801F9           ADD RCX, RDI                     ; no-arg-parsing entry point</span>
+<span style="color: #8b2252;">; 8B:       488BD1           MOV RDX, RCX</span>
+<span style="color: #8b2252;">; 8E:       48D1E2           SHL RDX, 1</span>
+<span style="color: #8b2252;">; 91:       710C             JNO L0</span>
+<span style="color: #8b2252;">; 93:       488BD1           MOV RDX, RCX</span>
+<span style="color: #8b2252;">; 96:       41BB70060020     MOV R11D, 536872560              ; ALLOC-SIGNED-BIGNUM-IN-RDX</span>
+<span style="color: #8b2252;">; 9C:       41FFD3           CALL R11</span>
+<span style="color: #8b2252;">; 9F: L0:   488BE5           MOV RSP, RBP</span>
+<span style="color: #8b2252;">; A2:       F8               CLC</span>
+<span style="color: #8b2252;">; A3:       5D               POP RBP</span>
+<span style="color: #8b2252;">; A4:       C3               RET</span>
+<span style="color: #8b2252;">"</span>
+  (<span style="color: #a020f0;">declare</span> (<span style="color: #a020f0;">inline</span> plus))
+  (<span style="color: #a020f0;">declare</span> (optimize (speed 3) (safety 0)))
+  (<span style="color: #a020f0;">declare</span> (type fixnum a b))
+  (plus a b))
+</pre>
+</div>
+</div>
+
+<div id="outline-container-sec-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> 型をつけることでコンパイル時ディスパッチと同等に</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+→ コンパイラマクロ
+</p>
+
+<p>
+→ パターンマッチ構文に展開
+</p>
+
+<p>
+→ <b>プリミティブなif文列に展開</b>
+</p>
+
+<p>
+→ <b>型推論に基づいて到達不能なコードを枝刈り</b> (処理系が勝手にやってくれる)
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">declare</span> (type fixnum a b))
+(<span style="color: #a020f0;">LET</span> ((#<span style="color: #483d8b;">:A1734</span> (1+ A)) (#<span style="color: #483d8b;">:B1735</span> (1- B)))
+  ....
+  <span style="color: #b22222;">;; </span><span style="color: #b22222;">XXX &#26525;&#21000;&#12426;!!</span>
+  <span style="color: #b22222;">;;</span>
+  <span style="color: #b22222;">;;   </span><span style="color: #b22222;">(if (typep 'string)</span>
+  <span style="color: #b22222;">;;       </span><span style="color: #b22222;">...</span>
+  <span style="color: #b22222;">;;</span>
+  (<span style="color: #a020f0;">if</span> (typep 'fixnum)
+      ...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> </h3>
+<div class="outline-text-3" id="text-8-2">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(<span style="color: #a020f0;">declare</span> (<span style="color: #a020f0;">inline</span> plus))
+(<span style="color: #a020f0;">declare</span> (optimize (speed 3) (safety 0)))
+(<span style="color: #a020f0;">declare</span> (type fixnum a b))
+(plus a b)
+<span style="color: #b22222;">; </span><span style="color: #b22222;">disassembly for FUNC-USING-INLINED-PLUS-AND-TYPE-ADDED</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">Size: 29 bytes. Origin: #x10031E7788</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">88:       4801F9           ADD RCX, RDI   ; &#8592; &#36275;&#12375;&#31639;&#12398;&#12415;&#12289;JMP&#12394;&#12375;!</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">8B:       488BD1           MOV RDX, RCX   ; </span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">8E:       48D1E2           SHL RDX, 1</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">91:       710C             JNO L0         ; &#8592; &#32080;&#26524;&#12399;BIGNUM&#12363;&#12418;&#12375;&#12428;&#12394;&#12356;</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">93:       488BD1           MOV RDX, RCX</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">96:       41BB70060020     MOV R11D, 536872560              ; ALLOC-SIGNED-BIGNUM-IN-RDX</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">9C:       41FFD3           CALL R11</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">9F: L0:   488BE5           MOV RSP, RBP</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">A2:       F8               CLC</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">A3:       5D               POP RBP</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">A4:       C3               RET</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> Hypercast</h2>
+<div class="outline-text-2" id="text-9">
+<ul class="org-ul">
+<li><code>[X]</code> coerce の上位互換
+</li>
+<li><code>[X]</code> CLOSで高い拡張性
+</li>
+<li><code>[X]</code> コンパイル時型決定できればネイティブコード化
+</li>
+<li><code>[&#xa0;]</code> <b>自動型変換</b>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> 自動型変換</h3>
+<div class="outline-text-3" id="text-9-1">
+<ul class="org-ul">
+<li>型が <b>N</b> 個あれば <b>N<sup>2</sup></b> 個の変換関数を書く必要がある
+<div class="larger">
+<p>
+<b><i>→ 無理!!!</i></b>
+</p>
+
+</div>
+</li>
+
+<li>直接サポートされていない型変換は手で書くことに
+<div class="larger">
+<p>
+<b><i>→ 醜悪!!!</i></b>
+</p>
+
+</div>
+</li>
+</ul>
+
+<div class="larger">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(cast (cast #\char 'fixnum) 'bitvector)
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> なんでも探索: 型空間で経路探索</h3>
+<div class="outline-text-3" id="text-9-2">
+
+<div class="figure">
+<p><img src="img/auto1.png" alt="auto1.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> なんでも探索: 型空間で経路探索</h3>
+<div class="outline-text-3" id="text-9-3">
+<p>
+一応目安で辺に重みをつけている 最適コストの経路
+</p>
+
+
+<div class="figure">
+<p><img src="img/auto3.png" alt="auto3.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9-4" class="outline-3">
+<h3 id="sec-9-4"><span class="section-number-3">9.4</span> なんでも探索: 型空間で経路探索</h3>
+<div class="outline-text-3" id="text-9-4">
+<p>
+ダイクストラ法で探索
+</p>
+
+
+<div class="figure">
+<p><img src="img/auto2.png" alt="auto2.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-9-5" class="outline-3">
+<h3 id="sec-9-5"><span class="section-number-3">9.5</span> なんでも探索: 型空間で経路探索</h3>
+<div class="outline-text-3" id="text-9-5">
+<div class="larger">
+<div class="org-src-container">
+
+<pre class="src src-lisp">(cast #\c 'bit-vector)
+<span style="color: #b22222;">; </span><span style="color: #b22222;">-&gt; (cast (cast #\c 'fixnum) 'bit-vector)</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">-&gt; (cast 99 'bit-vector)</span>
+<span style="color: #b22222;">; </span><span style="color: #b22222;">-&gt; #*1100011000000000000000000000000000000000000000000000000000000000</span>
+</pre>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> まとめ</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+パターンマッチャをつかえば Inline CLOS が簡単に作れることを紹介した (してない)
+</p>
+
+<p>
+アムステルダムの空港と飛行機の中でおもしろめのライブラリを作った
+</p>
+
+<p>
+今後の課題: 型変換の経路探索が実行時なのでコンパイル時に移す
+</p>
+
+<p>
+"なんでもZDD" の話はまた今度
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Masataro Asai</p>
+<p class="date">Created: 2016-06-27 月 15:56</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
