@@ -24,10 +24,14 @@ Hypercast の 紹介
 
 #+BEGIN_NOTE
 #+BEGIN_ALIGNRIGHT
-Made by guicho2.71828 (Masataro Asai)
+
 #+END_ALIGNRIGHT
 #+END_NOTE
 #+END_outline-text-1
+
+#+BEGIN_NOTE
+Made by guicho2.71828 (Masataro Asai) --- N, P, ↑, ↓ keys to navigate
+#+END_NOTE
 
 * 近況報告 ICAPS 2016 @ London (Intl. Conf. Automated Planning & Scheduling)
 
