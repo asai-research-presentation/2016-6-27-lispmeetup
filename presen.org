@@ -463,7 +463,7 @@ BDD: Binary Decision Diagram --- Akers 1978, Bryant 1992, Boolean 関数
 
 ZDD: Zero-suppressed Decision Diagram ---  Minato et.al. 1993, 集合族、疎な集合
 
-(A)ADD: Arithmetic Decision Diagram --- 数字の扱えるBDD
+(A)ADD: Algebraic Decision Diagram --- 数字の扱えるBDD
 
 XADD: eXtended ADD --- 数 *式* を扱えるBDD
 
