@@ -13,6 +13,12 @@
 #+END_XLARGE
 
 #+BEGIN_CENTER
+一日で作った Common Lisp 型変換用フレームワーク
+
+Hypercast の 紹介
+
+　
+
 東京大学 総合文化研究科 D2 浅井 政太郎
 #+END_CENTER
 
@@ -374,6 +380,8 @@ Made by guicho2.71828 (Masataro Asai)
 
 ** なんでも探索: 型空間で経路探索
 
+もっとメソッドを増やせばさらにいろいろな型をサポート
+
 #+BEGIN_LARGER
 #+BEGIN_SRC lisp
 (cast #\c 'bit-vector)
@@ -391,6 +399,111 @@ Made by guicho2.71828 (Masataro Asai)
 
 今後の課題: 型変換の経路探索が実行時なのでコンパイル時に移す
 
-"なんでもZDD" の話はまた今度
+* 
 
+* 
+
+#+BEGIN_XLARGE
+#+BEGIN_CENTER
+あれ？
+#+END_CENTER
+#+END_XLARGE
+
+* 
+
+#+BEGIN_XLARGE
+#+BEGIN_CENTER
+Decision Diagram とか言ってなかった？
+#+END_CENTER
+#+END_XLARGE
+
+[[png:static/promiss]]
+
+# * 
+# 
+# #+BEGIN_XLARGE
+# #+BEGIN_CENTER
+# ディープラーニングではないAI研究
+# #+END_CENTER
+# #+END_XLARGE
+
+* 
+
+#+BEGIN_XLARGE
+#+BEGIN_CENTER
+なんでもZDD (未完)
+#+END_CENTER
+#+END_XLARGE
+
+* ZDD とは?
+
+#+BEGIN_HTML
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Q4gTV4r0zRs" frameborder="0" allowfullscreen></iframe>
+#+END_HTML
+
+* Decision Diagram
+
+[[png:static/bdd]]
+
+指数的( 2^n )に大きなデータセットをコンパクトに保存できる
+
+* Decision Diagram (BDD と ZDD)
+
+圧縮方法だけ違う
+
+[[png:static/simplify]]
+
+* いろいろな Decision Diagram
+
+BDD: Binary Decision Diagram --- Akers 1978, Bryant 1992, Boolean 関数
+
+ZDD: Zero-suppressed Decision Diagram ---  Minato et.al. 1993, 集合族、疎な集合
+
+(A)ADD: Arithmetic Decision Diagram --- 数字の扱えるBDD
+
+XADD: eXtended ADD --- 数 *式* を扱えるBDD
+
+SDDs: Sentential Decision Diagrams (IJCAI-2011) --- BDD より少し表現力の高いもの
+
+* Decision Diagram
+
+圧縮表現のまま AND, OR (BDD) や ×, ＋ (ADD) ができる!
+
+[[png:static/apply]]
+
+* Decision Diagram が 探索系 AI 分野で流行りに
+
+Edelkamp, Stefan, Peter Kissmann, and Alvaro Torralba. "BDDs Strike Back (in AI Planning)." In AAAI Conference on Artificial Intelligence. 2015.
+
+International Planning Competition 優勝ソルバ  SymBA* --- BDD ベース
+
+AAAI16 Tutorial
+
+ICAPS16 Tutorial session x 2
+
+#+BEGIN_ALIGNRIGHT
+スライド
+#+END_ALIGNRIGHT
+
+* 発表の意図は?
+
+Hypercast 上に CUDD へのマッパを書く
+
+CUDD: Colorado University Decision Diagram library -- そこそこ速い
+
+→ Lisp 上で圧縮表現のまま計算を行えるライブラリ
+
+間に合わなかった =(^^;)=
+
+* References
+
+[[https://github.com/guicho271828/hypercast][Hypercast]]
+
+[[https://github.com/guicho271828/inlined-generic-function/][Inlined Generic Function]]
+
+[[ http://users.cecs.anu.edu.au/~ssanner/AAAI16/][AAAI2016 Tutorial (Scott Sanner): Symbolic Methods for Hybrid Inference, Optimization, and Decision-making]]
+
+[[http://icaps16.icaps-conference.org/tutorials.html#tut4][ICAPS16 Tutorial AM2 (Willem-Jan van Hoeve): Decision Diagrams for Sequencing and Scheduling]]
+
+[[http://vlsi.colorado.edu/~fabio/CUDD/][CUDD (Colorado University Decision Diagram Package)]]
 

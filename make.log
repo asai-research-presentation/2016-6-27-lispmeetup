@@ -1,19 +1,19 @@
-make[1]: Entering directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup'
-make[1]: warning: -jN forced in submake: disabling jobserver mode.
+make[1]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup' に入ります
+make[1]: 警告: 副次 make で -jN を強制指定しました: jobserver モードを無効にします.
 make -C img
 make -C css
-make -C scripts
-make[2]: Entering directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/css'
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/css' に入ります
 sass --update .
-make[2]: Entering directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/scripts'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/scripts'
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/img' に入ります
+make[2]: `all' に対して行うべき事はありません.
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/img' から出ます
+make -C scripts
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/scripts' に入ります
+make[2]: `all' に対して行うべき事はありません.
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/scripts' から出ます
 scripts/org-html.sh presen.org presen.org.html
-make[2]: Entering directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/img'
-make[2]: Nothing to be done for `all'.
-make[2]: Leaving directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/img'
 Loading /home/guicho/repos/presentations/2016-6-27-lispmeetup/scripts/compile-org-html.el (source)...
-make[2]: Leaving directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup/css'
+make[2]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup/css' から出ます
 Loading vc-git...
 Warning: defvar ignored because org-agenda-archives-mode is let-bound
 Warning: defvar ignored because org-agenda-skip-comment-trees is let-bound
@@ -21,4 +21,4 @@ Warning: defvar ignored because org-agenda-skip-function is let-bound
 Saving file /home/guicho/repos/presentations/2016-6-27-lispmeetup/presen.org.html...
 Wrote /home/guicho/repos/presentations/2016-6-27-lispmeetup/presen.org.html
 cp -f presen.org.html index.html
-make[1]: Leaving directory `/home/guicho/repos/presentations/2016-6-27-lispmeetup'
+make[1]: ディレクトリ `/home/guicho/repos/presentations/2016-6-27-lispmeetup' から出ます
